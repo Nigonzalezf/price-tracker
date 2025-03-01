@@ -33,7 +33,7 @@ class Store:
         self.name = name
         self.url = url
 
-
+# Retrieve all stores that list a product by the product's ID.
 def get_product_by_id(id):
     with sqlite3.connect("database.db") as conn:
         conn.execute("PRAGMA journal_mode=WAL;")
@@ -66,7 +66,7 @@ def get_product_stores_by_id(id):
             )
         return product_stores
 
-
+# Retrieve the price history of a product by its ID.
 def get_price_history_by_id(product_id):
     """Returns a json object with the price history of a given product id"""
     with sqlite3.connect("database.db") as conn:
